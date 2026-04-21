@@ -1,5 +1,7 @@
 <?php
 
+use common\models\User;
+
 return [
     'id' => 'app-frontend-tests',
     'components' => [
@@ -29,7 +31,7 @@ return [
             'messageClass' => \yii\symfonymailer\Message::class,
         ],
         'user' => [
-            'identityClass' => \common\models\User::class,
+            'identityClass' => User::class,
             'enableAutoLogin' => false,
             'identityCookie' => [
                 'name' => '_identity-frontend-test',
