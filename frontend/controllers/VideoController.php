@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Comments;
 use common\models\VideoLike;
 use common\models\Videos;
 use common\models\VideoView;
@@ -47,6 +48,7 @@ class VideoController extends Controller
     {
         $this->layout = 'auth';
         $model = $this->findVideo($id);
+        $commentModel = new Comments();
 
         $videoView = new VideoView();
         $videoView->video_id = $id;
@@ -64,7 +66,8 @@ class VideoController extends Controller
         
         return $this->render('view', [
             'model' => $model,
-            'similarVideo' => $similarVideo
+            'similarVideo' => $similarVideo,
+            'commentModel' => $commentModel,
         ]);
     }
 

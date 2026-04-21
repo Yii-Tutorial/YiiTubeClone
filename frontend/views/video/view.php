@@ -5,6 +5,7 @@
 
     use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 
 ?>
@@ -38,6 +39,17 @@ use yii\widgets\Pjax;
             </p>
             <p><?php echo Html::encode($model->description) ?></p>
         </div>
+        <div>
+            <?php \yii\widgets\Pjax::begin(['id' => 'comment-pjax-container', 'enablePushState' => false]) ?>
+                <?= $this->render('_comment_section', [
+                    'model' => $model,
+                    'commentModel' => $commentModel,
+                    'comments' => $model->getComments()->all(),
+                ]) ?>
+            <?php \yii\widgets\Pjax::end() ?>
+        </div>
+
+
     </div>
     <div class="col-sm-4">
         <?php foreach ($similarVideo as $video) : ?>

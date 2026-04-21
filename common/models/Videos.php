@@ -223,4 +223,12 @@ class Videos extends \yii\db\ActiveRecord
     {
         return $this->hasMany(VideoLike::class, ['video_id' => 'id'])->disliked();
     }
+
+    public function getComments()
+    {
+        return $this->hasMany(Comments::class, ['video_id' => 'id'])
+            ->andWhere(['parent_id' => null])
+            ->with(['user', 'comments.user'])
+            ->orderBy(['created_at' => SORT_DESC]);
+    }
 }
