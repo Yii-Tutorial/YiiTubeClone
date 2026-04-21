@@ -10,10 +10,10 @@ return [
             'showScriptName' => true,
         ],
         'request' => [
-            'cookieValidationKey' => 'abcxyz-test-secret-key',
-            'csrfParam' => '_csrf-abcxyz-test',
+            'cookieValidationKey' => 'frontend-test-secret-key',
+            'csrfParam' => '_csrf-frontend-test',
             'csrfCookie' => [
-                'name' => '_csrf-abcxyz-test',
+                'name' => '_csrf-frontend-test',
                 'path' => '/',
                 'httpOnly' => true,
             ],
@@ -26,7 +26,7 @@ return [
             ],
         ],
         'mailer' => [
-            'messageClass' => \yii\symfonymailer\Message::class,
+            'messageClass' => Message::class,
         ],
         'user' => [
             'identityClass' => \common\models\User::class,
