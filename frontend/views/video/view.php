@@ -21,7 +21,11 @@ use yii\widgets\Pjax;
                 <?php echo $model->getViews()->count() ?> views . <?php echo \Yii::$app->formatter->asDate($model->created_at) ?>
             </div>
             <div>
-                <?php Pjax::begin()?>
+                <?php Pjax::begin([
+                    'id' => 'like-dislike-pjax-container',
+                    'enablePushState' => false,
+                    'enableReplaceState' => false,
+                ]) ?>
                 <?php echo $this->render('_like_dislike', [
                         'model' => $model,
                 ]) ?>

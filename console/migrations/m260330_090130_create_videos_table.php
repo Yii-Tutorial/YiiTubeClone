@@ -28,9 +28,6 @@ class m260330_090130_create_videos_table extends Migration
             'updated_at' => $this->integer(11),
             'created_by' => $this->integer(11),
         ]);
-
-        $this->addPrimaryKey('pk-videos-id', '{{%videos}}', 'video_id');
-
         // creates index for column `created_by`
         $this->createIndex(
             '{{%idx-videos-created_by}}',
