@@ -10,10 +10,10 @@ return [
             'showScriptName' => true,
         ],
         'request' => [
-            'cookieValidationKey' => 'fe-test-secret-key',
-            'csrfParam' => '_csrf-fe-test',
+            'cookieValidationKey' => 'abcxyz-test-secret-key',
+            'csrfParam' => '_csrf-abcxyz-test',
             'csrfCookie' => [
-                'name' => '_csrf-fe-test',
+                'name' => '_csrf-abcxyz-test',
                 'path' => '/',
                 'httpOnly' => true,
             ],
